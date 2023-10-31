@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('pokemon', {
+  sequelize.define('Pokemons', {
     id:{
       type: DataTypes.UUID,
       primaryKey: true,
@@ -17,15 +17,15 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    life:{
+    health:{
       type: DataTypes.STRING,
       allowNull: false,
     },
-    stroke:{
+    attack:{
       type: DataTypes.STRING,
       allowNull: false,
     },
-    defending:{
+    defense:{
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -38,6 +38,10 @@ module.exports = (sequelize) => {
     weight:{
       type: DataTypes.STRING,
     }, 
+    created:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    }
   },
   {timestamps: false}
   );
