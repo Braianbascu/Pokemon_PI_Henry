@@ -1,4 +1,4 @@
-const {createPokemonController} = require("../controller/createPokemonController")
+const {createPokemonController} = require("../controller/createPokemonController");
 
 // solicitud por body de los datos
 const postCreatePokemonHandler =  async (req, res)=>{
@@ -11,8 +11,8 @@ const postCreatePokemonHandler =  async (req, res)=>{
         defense,
         speed,
         height,
-        weigth,
-        types,
+        weight,
+        type,
     } =req.body;
 // creacion de pokemon con datos y su resspuesta de forma exitosa
     try {
@@ -25,8 +25,8 @@ const postCreatePokemonHandler =  async (req, res)=>{
         defense,
         speed,
         height,
-        weigth,
-        types
+        weight,
+        type,
         );
         res.status(201).json({
             message: "El Pokemon se creo de forma exitosa",

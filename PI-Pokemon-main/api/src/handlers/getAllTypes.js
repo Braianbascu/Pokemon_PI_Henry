@@ -1,5 +1,13 @@
-const getAllTypesHandler = (req, res)=> {
-    res.status(200).send("todos los tipos");
+const {getTypeController} = require("../controller/typesController");
+
+
+const getAllTypesHandler = async(req, res)=> {
+    try {
+        const types = await getTypeController()
+        res.status(200).json(types)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 };
 
 

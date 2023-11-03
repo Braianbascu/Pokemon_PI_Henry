@@ -1,7 +1,7 @@
 const {Pokemons, Type} = require("../db")
 const defaultImage = "https://nintendo.pe/wp-content/uploads/2016/05/HddtBOT-copia.jpg"
 
-let createPokemonController = async(
+const createPokemonController = async(
     id,
     name,
     image,
@@ -10,8 +10,8 @@ let createPokemonController = async(
     defense,
     speed,
     height,
-    weigth,
-    types
+    weight,
+    type
 ) =>{
     const checkPokemon = await Pokemons.findOne({where: {name: name} });
     if (checkPokemon){
@@ -26,19 +26,16 @@ let createPokemonController = async(
             defense,
             speed,
             height,
-            weigth,
-            types,
-        });
+            weight,
+        })
 
-        const typeInDb =  await Type.findAll ({
-            where: {
-                name: types,
-            },
-        });
-        newPoke.addType(typeInDb);
-        tipo= typeInDb.map((elem)=> elem.name);
+      type.map(async(t)=>{
+        const newTypes= await Type.findOne({where: {name: t}});
+        await newPoke.addTypes(newTypes);
+      });
 
-        return `Creacion exitosa con id:${newPoke.id} y de type:${tipo}`
+        return (newPoke,`Creacion exitosa con id:${newPoke.id}` )
+   
     }
 }; 
 

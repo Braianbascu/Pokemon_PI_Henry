@@ -31,7 +31,7 @@ const pokemonByIdController = async (id, source) =>{
             model:Type,  
             attributes: ["name"],     // estos atributos se suman 
             througth: {
-                types:[],
+                type:[],
             }
         }
     });

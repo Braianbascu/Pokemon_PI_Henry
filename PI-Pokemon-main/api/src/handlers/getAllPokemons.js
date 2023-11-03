@@ -1,19 +1,18 @@
 const { allPokemonsController } = require("../controller/AllPokemonsController");
+const {pokemonsByNameController} = require("../controller/pokemonByNameController");
 
 const getAllPokemonsHandler = async(req, res)=>{
     const {name} = req.query;
 
     try {
-        
-        if(name){
 
-            const pokemonByName= await pokemonByNameController(name)
-            res.status(200).json(pokemonByName);
-        } else {
-            const allPokemons = await allPokemonsController()
-            res.status(200).json(allPokemons);
+        if(name){
+            const pokemonByName = await pokemonsByNameController(name);
+            return res.status(200).json(pokemonByName)
         }
 
+        const allPokemons = await allPokemonsController()
+           return res.status(200).json(allPokemons);
     } catch (error) {
         res.status(400).json(error.message)
     }
