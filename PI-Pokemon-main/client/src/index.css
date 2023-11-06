@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://files.cults3d.com/uploaders/27085771/illustration-file/59595ded-dc85-42ea-b780-fb1b9097e32e/Sin-t%C3%ADtulo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover ;
 }
 
 code {

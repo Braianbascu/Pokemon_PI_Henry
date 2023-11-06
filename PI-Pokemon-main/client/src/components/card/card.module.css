@@ -1,0 +1,26 @@
+.card{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    border: 
+    3px solid rgb(0, 128, 128);
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: greenscale;
+    backface-visibility: translateZ(0);
+    transition: transform 0.50s ease-out;
+    box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.imageContainer {
+    position: relative;
+
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 5px;
+    border: 3px solid black;
+}
